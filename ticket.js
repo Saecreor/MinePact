@@ -240,4 +240,4 @@ const closeTicket = new MessageActionRow()
         .setStyle('DANGER')
 )
 
-client.login('OTU3NTMxNjMwMjc1MjcyNzI3.YkAI0g.nEUyEGyNvtiD-4Cnpp5UbNJbVs4')
+client.login(process.env.TOKEN)
