@@ -1,0 +1,28 @@
+{
+  "name": "nutbot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "ts-node index.ts",
+    "tsc": "tsc -w --skipLibCheck"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.25.0",
+    "discord-ghost-transcript-v13": "^1.0.6",
+    "discord-transcript": "^2.0.9",
+    "discord.js": "^13.6.0",
+    "dotenv": "^14.2.0",
+    "mongoose": "^6.2.9",
+    "node-fetch": "^2.6.7",
+    "reconlx": "^2.5.2",
+    "wokcommands": "^1.5.3"
+  },
+  "devDependencies": {
+    "typescript": "^4.5.5"
+  }
+}
