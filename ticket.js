@@ -76,6 +76,14 @@ client.on('messageCreate', async message => {
         message.client.channels.cache.get(tickets.id).send({embeds: [createTicket], components: [row] })
         message.react('✔')
     }
+    if(command === 't')
+    {
+        client.commands.get('toggle').execute(message, args, settingSchema)
+    }
+    if(command === 'c' && message.channel.parent.id === ticketsID)
+    {
+        client.commands.get('close').execute({message, args, client, transcriptSchema, closingTicket, cantClose})
+    }
     if(command === 'rename' && message.channel.parent.id === '957911835900792832')
     {
         client.commands.get('rename').execute(message, args)
@@ -99,7 +107,6 @@ client.on('messageCreate', async message => {
     if(command === 'toggle')
     {
         client.commands.get('toggle').execute(message, args, settingSchema)
-
     }
     if(command === 'newchan' && message.member.roles.cache.has('947029503182512148'))
     {
