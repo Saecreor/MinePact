@@ -1,8 +1,10 @@
+const { Permissions } = require('discord.js')
+
 module.exports = {
     name: 'toggles',
     description: 'shows current settings',
     async execute(message, args, settingSchema){
-        if(!message.member.roles.cache.has('947029503182512148'))
+        if(!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         {
             message.channel.send('You do not have permission to run this command!')
             return

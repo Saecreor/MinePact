@@ -1,3 +1,5 @@
+const { Permissions } = require('discord.js')
+
 module.exports = {
     name: 'toggle',
     description: 'toggles settings',
@@ -7,7 +9,7 @@ module.exports = {
             message.channel.send('Incorrect command usage. Please use -toggle (suggestions/tickets/applications)')
             return 
         }
-        if(!message.member.roles.cache.has('947029503182512148'))
+        if(!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         {
             message.channel.send('You do not have permission to run this command!')
             return

@@ -1,8 +1,7 @@
 <img align="right" src="https://media.discordapp.net/attachments/925651548061720586/957771549493055518/MPBIG.png" height="256" witdh="256">
 
 # MinePact
-[![Discord](https://discordapp.com/api/guilds/947002930362462208/widget.png)](https://discord.gg/DWju8vzEEc) <br>
-Discord support bot for mc.MinePact.net 
+MinePact bot has tons of amazing features that can help your community discord. This bot was orignally designed for mc.MinePact.net and is now open source for others.
 
 
 ## Features
@@ -12,4 +11,4 @@ Discord support bot for mc.MinePact.net
 - MongoDB Support
 
 ## Issues
-- Contact Sae#1649 on discord for help!
+- Having issues? Contact Sae#1649 On Discord For Support!

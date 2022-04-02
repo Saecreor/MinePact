@@ -1,10 +1,10 @@
-const { MessageReaction, MessageActionRow, MessageButton } = require("discord.js")
+const { MessageReaction, MessageActionRow, MessageButton, Permissions } = require("discord.js")
 
 module.exports = {
     name: 'verifycreate',
     description: 'creates the verify embed',
     async execute(message, args, client, interaction){
-        if(!message.member.roles.cache.has('947029503182512148'))
+        if(!message.member.permissions.has(Permissions.FLAGS.ADMINISTRATOR))
         {
             message.channel.send('You do not have permission to run this command!')
             return
