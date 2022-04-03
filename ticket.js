@@ -76,19 +76,11 @@ client.on('messageCreate', async message => {
         message.client.channels.cache.get(tickets.id).send({embeds: [createTicket], components: [row] })
         message.react('✔')
     }
-    if(command === 't')
-    {
-        client.commands.get('toggle').execute(message, args, settingSchema)
-    }
-    if(command === 'c' && message.channel.parent.id === ticketsID)
-    {
-        client.commands.get('close').execute({message, args, client, transcriptSchema, closingTicket, cantClose})
-    }
-    if(command === 'rename' && message.channel.parent.id === '957911835900792832')
+    if(command === 'rename' || command === 'r' && message.channel.parent.id === '957911835900792832')
     {
         client.commands.get('rename').execute(message, args)
     }
-    if(command === 'close' && message.channel.parent.id === ticketsID)
+    if(command === 'close' || command === 'c' && message.channel.parent.id === ticketsID)
     {
         client.commands.get('close').execute({message, args, client, transcriptSchema, closingTicket, cantClose})
     }
@@ -104,7 +96,7 @@ client.on('messageCreate', async message => {
     {
         client.commands.get('deny').execute(message, args, suggestionSchema)
     }
-    if(command === 'toggle')
+    if(command === 'toggle' || command === 't')
     {
         client.commands.get('toggle').execute(message, args, settingSchema)
     }
@@ -112,7 +104,7 @@ client.on('messageCreate', async message => {
     {
         message.channel.send({embeds: [createTicket], components: [row]})
     }
-    if(command === 'toggles')
+    if(command === 'toggles' || command === 'ts')
     {
         client.commands.get('toggles').execute(message, args, settingSchema)
     }
