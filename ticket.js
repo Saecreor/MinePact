@@ -17,11 +17,15 @@ const client = new Discord.Client({
 const prefix = '-'
 
 client.commands = new Discord.Collection()
-const commandFiles = fs.readdirSync('./cmds/').filter(file => file.endsWith('.js'))
+const commandFolders = fs.readdirSync('./cmds/')
+for (const folder of commandFolders) {
+    const commandFiles = fs.readdirSync(`./cmds/${folder}`).filter(file => file.endsWith('.js'))
+
 for(const file of commandFiles)
 {
-    const command = require(`./cmds/${file}`)
+    const command = require(`./cmds/${folder}/${file}`)
     client.commands.set(command.name, command)
+}
 }
 
 
