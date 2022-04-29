@@ -13,7 +13,6 @@
   "license": "ISC",
   "dependencies": {
     "axios": "^0.25.0",
-    "discord-ghost-transcript-v13": "^1.0.6",
     "discord-html-transcripts": "^2.3.2",
     "discord.js": "^13.6.0",
     "dotenv": "^14.2.0",
