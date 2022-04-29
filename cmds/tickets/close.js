@@ -1,5 +1,5 @@
 const { MessageAttachment } = require('discord.js')
-const { generateTranscript } = require('reconlx')
+const discordTranscripts = require('discord-html-transcripts')
 
 module.exports = {
     name: 'close',

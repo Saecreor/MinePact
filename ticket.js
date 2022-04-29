@@ -5,6 +5,7 @@ const ticketSchema = require('./ticket-schema')
 const suggestionSchema = require('./suggestion-schema')
 const settingSchema = require('./settings-schema')
 const transcriptSchema = require('./transcript-schema')
+const discordTranscripts = require('discord-html-transcripts')
 const fs = require('fs')
 require('dotenv').config()
 const client = new Discord.Client({
@@ -43,8 +44,8 @@ client.on('ready', async () => {
         applicationsToggled: 'on',
     }).save()*/
 })
-let idSupport = '957836172720238632' //'957874111269441597' '957836172720238632' // Server 1
-let ticketsID = '957911835900792832' //'957911835900792832' "947068515440021524"
+let idSupport = '957874111269441597' //'957874111269441597' '957836172720238632' // Server 1
+let ticketsID = '957873973062950912' //'957911835900792832' "947068515440021524"
 client.on('messageCreate', async message => {
     if(!message.content.startsWith(prefix) || message.author.bot) return
     
@@ -170,10 +171,20 @@ client.on('interactionCreate', async interaction => { // Ticket creation interac
             return
             
         }
-        else
+        else {
+        const ticketChannel = interaction.channel
+        const attachment = await discordTranscripts.createTranscript(ticketChannel)
+
+        const transcriptChannel = interaction.guild.channels.cache.get('969475316512878662')
+
+        transcriptChannel.send({
+            files: [attachment]
+        })
+
         interaction.channel.send({embeds: [closingTicket]})
         setTimeout(() => interaction.channel.delete(), 5000)
         interaction.deferUpdate()
+        }
     }
     
 })
